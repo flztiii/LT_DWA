@@ -26,6 +26,8 @@ For running code:
 
 - yaml-cpp (sudo apt install libyaml-cpp-dev)
 
+- python-rvo2 (https://github.com/sybrenstuvel/Python-RVO2)
+
 # Install
 
 1. create a root directory
