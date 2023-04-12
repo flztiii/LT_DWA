@@ -1,0 +1,14 @@
+<launch>
+    <node pkg="navigation" name="navigation_node" type="navigation_node" output="screen">
+        <!-- 訂閱代價地圖 -->
+        <param name="costmap_topic" value="/costmap_generation/costmap_2d" />
+        <!-- 发布规划的路径 -->
+        <param name="navigation_topic" value="/navigation/path" />
+        <!-- 服务名称 -->
+        <param name="navigation_service_name" value="/navigation_service" />
+        <!-- 机器人外接圆直径 -->
+        <param name="robot_disc_size" value="0.44"/>
+        <!-- planner type -->
+        <param name="planner_type" value="astar"/>
+    </node>
+</launch>

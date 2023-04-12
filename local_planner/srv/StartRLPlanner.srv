@@ -1,0 +1,13 @@
+float64 x
+float64 y
+float64 vx
+float64 vy
+float64 radius
+float64 gx
+float64 gy
+float64 v_pref
+float64 theta
+obstacle_msgs/CircleObstacles obstacles
+---
+float64 v
+float64 w

@@ -1,0 +1,5 @@
+geometry_msgs/Point start_point
+geometry_msgs/Point goal_point
+nav_msgs/OccupancyGrid cost_map
+---
+nav_msgs/Path navigation_path

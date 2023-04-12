@@ -1,0 +1,6 @@
+geometry_msgs/Pose pose
+nav_msgs/OccupancyGrid global_map
+obstacle_msgs/CircleObstacles obstacles
+bool publish
+---
+nav_msgs/OccupancyGrid local_map

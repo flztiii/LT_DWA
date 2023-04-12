@@ -1,0 +1,9 @@
+float64 start_stamp
+string crowd_name
+---
+uint8 READY = 0
+uint8 INVALID_CROWD_NAME = 1
+uint8 INVALID_START_STAMP = 2
+uint8 result
+float64 time_gap
+obstacle_msgs/CircleObstacles start_obstacles

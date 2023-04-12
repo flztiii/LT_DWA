@@ -1,0 +1,36 @@
+<launch>
+    <!-- 障碍物 -->
+    <node pkg="crowd_simulator" name="crowd_simulator_node" type="orca_simulator_node.py" />
+
+    <!-- 局部地图生成程序 -->
+    <node pkg="local_map_generation" name="local_map_generation_node" type="local_map_generation_node" output="screen">
+        <param name="local_map_pub_topic" value="/local_map_generation/costmap_2d"/>
+        <param name="local_map_service_name" value="/local_map_generation/service" />
+        <param name="map_width" value="140"/>
+        <param name="map_height" value="140"/>
+        <param name="map_resolution" value="0.05"/>
+    </node>
+
+    <!-- 运动规划 -->
+    <node pkg="local_planner" name="local_planner_node" type="local_planner_node" output="screen" >
+        <!-- 订阅服务 -->
+        <param name="prepare_simulation_service_name" value="/crowd_simulator/prepare_orca_simulation"/>
+        <param name="obstacles_service_name" value="/crowd_simulator/get_orca_simulation"/>
+        <param name="end_simulation_service_name" value="/crowd_simulator/end_orca_simulation"/>
+        <param name="local_map_service_name" value="/local_map_generation/service"/>
+        <!-- 发布消息 -->
+        <!-- 静态地图 -->
+        <param name="static_map_topic" value="/map" />
+        <!-- 目标点 -->
+        <param name="target_pose_topic" value="/local_planner/target_pose" />
+        <!-- 机器人可视化 -->
+        <param name="robot_vis_topic" value="/local_planner/robot_vis_topic" />
+        <!-- 历史位置可视化 -->
+        <param name="historical_poses_vis_topic" value="/local_planner/historical_poses_vis_topic" />
+        <!-- 障碍物运动可视化 -->
+        <param name="crowd_trajectory_vis_topic" value="/local_planner/crowd_trajectory_vis_topic" />
+    </node>
+
+    <!-- rviz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find local_planner)/rviz/test.rviz" />
+</launch>

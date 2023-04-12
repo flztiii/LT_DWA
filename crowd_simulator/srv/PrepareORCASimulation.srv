@@ -1,0 +1,5 @@
+geometry_msgs/Pose robot_pose
+geometry_msgs/Point target
+string phase
+---
+obstacle_msgs/CircleObstacles obstacles

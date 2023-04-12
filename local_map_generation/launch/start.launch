@@ -1,0 +1,10 @@
+<launch>
+    <!-- 局部地图生成程序 -->
+    <node pkg="local_map_generation" name="local_map_generation_node" type="local_map_generation_node" output="screen">
+        <param name="local_map_pub_topic" value="/local_map_generation/costmap_2d"/>
+        <param name="local_map_service_name" value="/local_map_generation/service" />
+        <param name="map_width" value="140"/>
+        <param name="map_height" value="140"/>
+        <param name="map_resolution" value="0.05"/>
+    </node>
+</launch>

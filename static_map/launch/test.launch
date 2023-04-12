@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="map_server" type="map_server" name="map_server" args="$(find static_map)/map/maze3.yaml">
+        <param name="frame_id" value="odom" />
+    </node >
+</launch>

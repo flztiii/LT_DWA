@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="crowd_simulator" name="crowd_simulator_node" type="crowd_simulator_node.py" output="screen" >
+        <param name="min_simulation_time" value="60.0" />
+    </node>
+    <node pkg="crowd_simulator" name="test_simulator_node" type="test_crowd_simulator.py" output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crowd_simulator)/rviz/test.rviz" />
+</launch>

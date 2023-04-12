@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="crowd_simulator" name="crowd_simulator_node" type="orca_simulator_node.py" output="screen" />
+    <node pkg="crowd_simulator" name="test_simulator_node" type="test_orca_simulator.py" output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crowd_simulator)/rviz/test.rviz" />
+</launch>
