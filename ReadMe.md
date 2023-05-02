@@ -2,8 +2,6 @@
 
 This repo is the code for the paper "Long-Term Dynamic Window Approach for Kinodynamic Local Planning in Static and Crowd Environments".
 
-https://user-images.githubusercontent.com/20518317/235564824-6d9873be-e862-48c0-97f3-ce82edaf27fa.mp4
-
 # Requirements
 
 For running code:
